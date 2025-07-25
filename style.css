@@ -64,7 +64,7 @@ nav {
 }
 
 .logo-img {
-	height: 45px; /* Kích thước logo */
+	height: 40px; /* Kích thước logo */
 	cursor: pointer;
 	transition: transform 0.3s ease;
 }
@@ -75,7 +75,7 @@ nav {
 .menu-text {
 	display: flex;
 	gap: 50px;
-	font-weight: 600;
+	font-weight: 1000;
 	color: #8d6e63;
 }
 .menu-text p {
@@ -122,6 +122,7 @@ nav {
 	padding: 2rem;
 	position: relative;
 	z-index: 2; /* Nằm trên lớp phủ và hình trang trí */
+    overflow-y: auto; /* <-- ĐÃ THÊM: Cho phép cuộn theo chiều dọc nếu cần */
 }
 
 #home-screen .home-content {
@@ -141,6 +142,7 @@ nav {
 	color: #795548;
 	font-size: 2.5rem;
 	margin-bottom: 2rem;
+    margin-top: 1rem;
 }
 .features-container {
 	display: grid;
@@ -168,11 +170,11 @@ nav {
 	max-width: 800px;
 }
 .about-section {
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 	opacity: 0;
 	background: rgba(255, 255, 255, 0.75);
-	padding: 1.5rem;
-	border-radius: 15px;
+	padding: 1rem;
+	border-radius: 5px;
 }
 .about-section p {
 	font-size: 1.1rem;
@@ -222,5 +224,5 @@ footer {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	z-index: 2; /* Nằm trên lớp phủ và hình trang trí */
+	z-index: 101;
 }
