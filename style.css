@@ -1,0 +1,226 @@
+/* === THIẾT LẬP CƠ BẢN & GIAO DIỆN TỔNG THỂ === */
+body {
+	margin: 0;
+	font-family: 'Quicksand', sans-serif;
+	background-color: #fef8f3;
+	color: #333;
+	overflow: hidden;
+	height: 100vh;
+}
+
+main {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	background-size: cover;
+	background-position: center center;
+	transition: background-image 1s ease-in-out;
+}
+
+/* Lớp phủ để làm chữ dễ đọc hơn */
+main::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(254, 248, 243, 0.8); /* Điều chỉnh độ mờ ở đây */
+	z-index: 0;
+}
+
+/* Style cho hình ảnh trang trí */
+#decorative-image {
+	position: absolute;
+	width: 350px;
+	height: 350px;
+	bottom: 5%;
+	right: 5%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 1; /* Nằm trên lớp phủ, dưới nội dung chính */
+	transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out,
+		background-image 0.2s linear;
+	opacity: 0;
+	transform: scale(0.9);
+}
+#decorative-image.visible {
+	opacity: 1;
+	transform: scale(1);
+}
+
+/* === THANH ĐIỀU HƯỚNG (NAV) === */
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+	animation: fadeIn 1s ease-in-out;
+	position: relative;
+    background: #ffe1c2;
+	z-index: 100; /* Nằm trên lớp phủ và hình trang trí */
+}
+
+.logo-img {
+	height: 45px; /* Kích thước logo */
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+.logo-img:hover {
+	transform: scale(1.05);
+}
+
+.menu-text {
+	display: flex;
+	gap: 50px;
+	font-weight: 600;
+	color: #8d6e63;
+}
+.menu-text p {
+	cursor: pointer;
+	transition: color 0.3s, transform 0.3s;
+}
+.menu-text p:hover {
+	color: #6d4c41;
+	transform: scale(1.1);
+}
+
+.btn {
+	background-color: #ffab91;
+	color: white;
+	text-decoration: none;
+	border: none;
+	padding: 0.75rem 1.5rem;
+	border-radius: 30px;
+	cursor: pointer;
+	font-size: 1rem;
+	font-weight: 600;
+	transition: background-color 0.3s, box-shadow 0.3s;
+}
+.btn:hover {
+	background-color: #ff8a65;
+	box-shadow: 0 4px 12px rgba(255, 138, 101, 0.4);
+}
+
+/* === LỚP TIỆN ÍCH === */
+.hidden {
+	display: none !important;
+}
+
+/* === TẠO KIỂU CHO CÁC MÀN HÌNH (VIEWS) === */
+#home-screen,
+#features-screen,
+#about-screen {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 2rem;
+	position: relative;
+	z-index: 2; /* Nằm trên lớp phủ và hình trang trí */
+}
+
+#home-screen .home-content {
+	animation: slideInUp 1s ease-out forwards;
+}
+#home-screen h1 {
+	margin: 0;
+	font-size: 4rem;
+	color: #6d4c41;
+}
+#home-screen p {
+	font-size: 1.5rem;
+	color: #8d6e63;
+}
+#features-screen h2,
+#about-screen h2 {
+	color: #795548;
+	font-size: 2.5rem;
+	margin-bottom: 2rem;
+}
+.features-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 2rem;
+	max-width: 1000px;
+}
+.feature-box {
+	background: rgba(255, 255, 255, 0.85);
+	padding: 2rem;
+	border-radius: 15px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	opacity: 0;
+}
+.feature-box:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+.feature-box h3 {
+	margin-top: 0;
+	color: #795548;
+}
+.about-content {
+	max-width: 800px;
+}
+.about-section {
+	margin-bottom: 2rem;
+	opacity: 0;
+	background: rgba(255, 255, 255, 0.75);
+	padding: 1.5rem;
+	border-radius: 15px;
+}
+.about-section p {
+	font-size: 1.1rem;
+	line-height: 1.7;
+	color: #5d4037;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes slideInUp {
+	from {
+		opacity: 0;
+		transform: translateY(40px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.animate-slide-up {
+	animation: slideInUp 0.8s ease-out forwards;
+}
+.feature-box:nth-child(2).animate-slide-up,
+.about-section:nth-child(2).animate-slide-up {
+	animation-delay: 0.2s;
+}
+.feature-box:nth-child(3).animate-slide-up,
+.about-section:nth-child(3).animate-slide-up {
+	animation-delay: 0.4s;
+}
+
+/* === FOOTER === */
+footer {
+	background-color: #ffe1c2;
+	padding: 1rem;
+	text-align: center;
+	font-size: 0.9rem;
+	color: #5d4037;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2; /* Nằm trên lớp phủ và hình trang trí */
+}
