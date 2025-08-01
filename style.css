@@ -72,6 +72,56 @@ nav {
 	transform: scale(1.05);
 }
 
+#home-screen, #features-screen, #about-screen {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem;
+	overflow-y: auto; 
+	justify-content: flex-start; 
+    position: relative; /* Cần thiết cho video nền */
+}
+
+#home-screen {
+	justify-content: center; /* Riêng màn hình home thì căn giữa */
+    overflow: hidden; /* Khóa cuộn cho màn hình home video */
+}
+
+/* --- SỬA LỖI & TÁI CẤU TRÚC: VIDEO BACKGROUND CHO ABOUT SCREEN --- */
+
+/* === ĐÃ THAY ĐỔI HOÀN TOÀN: STYLE CHO MỤC ABOUT === */
+
+/* Style cho video như một khối nội dung bình thường */
+#about-video {
+	width: 100%;
+	max-width: 700px;
+	height: auto;
+	border-radius: 15px;
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+	max-width: 800px;
+    padding-bottom: 5rem; 
+}
+
+.about-section {
+    opacity: 0;
+    margin-top: 2rem;
+}
+
+#about-screen h2 {
+	color: #795548;
+	font-size: 2rem;
+}
+
+#about-screen p {
+	font-size: 1.1rem;
+	line-height: 1.7;
+	color: #5d4037;
+}
+
 .menu-text {
 	display: flex;
 	gap: 50px;
@@ -116,7 +166,6 @@ nav {
 	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 	text-align: center;
 	padding: 2rem;

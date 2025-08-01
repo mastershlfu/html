@@ -31,6 +31,7 @@
 
 			<!-- Màn hình Home -->
 			<div id="home-screen" class="hidden">
+
 				<div class="home-content">
 					<h1>Meet Wellie 🧸</h1>
 					<p>Your Emotional Wellness Buddy</p>
@@ -68,29 +69,27 @@
 			<!-- Màn hình About -->
 			<div id="about-screen" class="hidden">
 				<div class="about-content">
+					<div class="about-section video-wrapper">
+						<!-- === THAY ĐỔI QUAN TRỌNG Ở ĐÂY === -->
+						<!-- Đã thêm 'controls', xóa 'autoplay muted loop' -->
+						<video id="about-video" controls>
+							<source src="./images/vid.mp4" type="video/mp4" />
+							Trình duyệt của bạn không hỗ trợ thẻ video.
+						</video>
+					</div>
+
+					<!-- Các khối text nằm bên dưới video -->
 					<div class="about-section">
 						<h2>What is Wellie?</h2>
-						<p>
-							Wellie is a soft, AI-powered bear designed to help children,
-							students, and individuals manage stress, express emotions, and
-							build healthier habits. Whether you're feeling anxious or just
-							need a hug, Wellie is here for you.
-						</p>
+						<p>Wellie is a soft, AI-powered bear designed to help...</p>
 					</div>
 					<div class="about-section">
 						<h2>Who is it for?</h2>
-						<p>
-							Wellie is designed for kids aged 6+, students struggling with
-							academic stress, and anyone who needs emotional support but
-							doesn’t always know how to ask for it.
-						</p>
+						<p>Wellie is designed for kids aged 6+, students struggling...</p>
 					</div>
 					<div class="about-section contact">
 						<h2>Contact Us</h2>
-						<p>
-							Have questions or want to join our waitlist? <br />Email us at
-							<strong>baymarsh@wellie.ai</strong>
-						</p>
+						<p>Have questions? Email us at <strong>baymarsh@wellie.ai</strong></p>
 					</div>
 				</div>
 			</div>
