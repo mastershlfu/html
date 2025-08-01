@@ -82,6 +82,9 @@ nav {
 	justify-content: flex-start; 
     position: relative; /* Cần thiết cho video nền */
 }
+#features-screen {
+	justify-content: center;
+}
 
 #home-screen {
 	justify-content: center; /* Riêng màn hình home thì căn giữa */
